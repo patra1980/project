@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webcal
+  name: webcal
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: webcal
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webcal
+    spec:
+      containers:
+      - image: princebitla/repo:Endgame
+        name: repo
+        resources: {}
+		ports:
+            - name: http
+              containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webcal
+spec:
+  selector:
+    app: webcal
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
