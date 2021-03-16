@@ -1,0 +1,8 @@
+- hosts: k8
+  tasks:
+  - name: copy deployment file to kubernetes master 
+    command: wget https://github.com/Preetam11/sample-web-application/blob/ansible-sonar/ansible.yaml -O /root/deployment.yaml
+  - name: delete the previous of kubernetes objects 
+    command: kubectl delete -f /root/deployment.yaml
+  - name: Create a Deployment by reading the definition from a local file
+    command: kubectl apply -f /root/deployment.yaml
