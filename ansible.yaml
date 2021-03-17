@@ -3,6 +3,6 @@
   - name: copy deployment file to kubernetes master 
     copy:
       src: deployment.yaml
-      dest: /root
+      dest: /home/centos/
   - name: create deployment
-    command: kubectl create -f deployment.yaml
+    command: /home/centos/kubectl create -f /home/centos/deployment.yaml
