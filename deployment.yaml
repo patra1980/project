@@ -22,7 +22,7 @@ spec:
         name: repo
         resources: {}
         ports:
-              - name: http
+            - name: http
               containerPort: 8080
 ---
 apiVersion: v1
