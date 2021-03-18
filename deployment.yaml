@@ -21,8 +21,8 @@ spec:
       - image: princebitla/repo:Endgame
         name: repo
         resources: {}
-	ports:
-            - name: http
+        ports:
+              - name: http
               containerPort: 8080
 ---
 apiVersion: v1
