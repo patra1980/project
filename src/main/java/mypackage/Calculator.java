@@ -3,7 +3,7 @@ package mypackage;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-System.out.println("BEGINNING OF THE PROGRAM");
+
 
 public class Calculator extends HttpServlet
 {
