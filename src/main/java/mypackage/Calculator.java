@@ -36,6 +36,7 @@ public class Calculator extends HttpServlet
         
         if(request.getParameter("r1")!=null)
         {
+	    System.out.println("added code");
             out.println("<h1>Addition</h1>"+addFucn(a1, a2));
         }
         if(request.getParameter("r2")!=null)
