@@ -1,13 +1,11 @@
 pipeline {
     agent any
     stages{
-        stage("build"){
+        stage("SCM"){
             steps{
-                node('build-node-label') 
+                node('scm-node-label') 
                  {
                     git 'https://github.com/patra1980/project.git'
-                    sh 'mvn clean'
-                    sh 'mvn package'
                  }
                 }
               }
