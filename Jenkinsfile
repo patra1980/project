@@ -35,8 +35,8 @@ pipeline {
              steps{
                  node('dockerserver')
                  {
-                   sh 'docker image rm -f myproject'
-                   sh 'sudo docker build -t myproject .'
+                   sh 'docker image rm -f patrautpal80/myproject'
+                   sh 'sudo docker build -t patrautpal80/myproject .' 
                  }
              }
          }
