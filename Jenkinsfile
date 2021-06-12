@@ -42,7 +42,7 @@ pipeline {
                  node('dockerserver')
                  {
                    script{
-                       dockerImage = docker.build registry + ":001"  
+                       dockerImage = docker.build registry + ":002"  
                        docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {   
                            dockerImage.push() }
                          }	
