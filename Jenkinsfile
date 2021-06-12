@@ -43,7 +43,7 @@ pipeline {
                  {
                    script{
                        dockerImage = docker.build registry + ":001"  
-                       docker.withRegistry( 'https://registry.hub.docker.com', docker-hub) {   
+                       docker.withRegistry( 'https://registry.hub.docker.com', docker-hub1) {   
                            dockerImage.push() }
                          }	
                  }
