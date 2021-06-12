@@ -1,6 +1,6 @@
 pipeline {
     environment {
-           registry = "patra1980/myproject"
+           registry = "patrautpal80/myproject"
            registryCredential = 'patrautpal80'
            dockerImage = ''
     }
