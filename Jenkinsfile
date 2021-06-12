@@ -41,8 +41,11 @@ pipeline {
              steps{
                  node('dockerserver')
                  {
-                   sh 'docker image rm -f patrautpal80/myproject'
-                   sh 'sudo docker build -t patrautpal80/myproject .'	
+                   script{
+                       dockerImage = docker.build registry"  
+                       docker.withRegistry('',registryCredential ) {   
+                           dockerImage.push()
+                         }	
                  }
              }
          }
