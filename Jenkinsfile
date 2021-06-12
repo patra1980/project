@@ -1,6 +1,8 @@
 pipeline {
     environment {
-           DOCKERHUB_CREDENTIALS = credentials('patra1980')
+           registry = "patrautpal80/myproject"
+           registryCredential = 'patrautpal80'
+           dockerImage = ''
     }
     agent any
     stages{
