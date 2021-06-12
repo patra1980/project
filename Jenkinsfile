@@ -42,7 +42,7 @@ pipeline {
                  node('dockerserver')
                  {
                    script{
-                       dockerImage = docker.build registry  
+                       dockerImage = docker.build registry + ":001"  
                        docker.withRegistry('',registryCredential ) {   
                            dockerImage.push() }
                          }	
