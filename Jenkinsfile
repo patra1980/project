@@ -42,10 +42,10 @@ pipeline {
                  node('dockerserver')   
                  {
                    script{
-                       sh "docker rmi -f $registry:$BUILD_NUMBER"
                        dockerImage = docker.build registry + ":$BUILD_NUMBER"  
                        docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {   
                            dockerImage.push() }
+                       sh "docker rmi -f $registry:$BUILD_NUMBER"
                          }	
                  }
              }
