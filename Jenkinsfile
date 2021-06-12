@@ -3,7 +3,7 @@ pipeline {
     stages{
 
          environment {  
-         DOCKERHUB_CREDENTIALS = credentials('patra1980-dockerhub')
+           DOCKERHUB_CREDENTIALS = credentials('patra1980-dockerhub')
          } 
          stage("SCM"){
             steps{
