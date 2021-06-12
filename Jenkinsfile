@@ -43,7 +43,7 @@ pipeline {
                  {
                    script{
                        dockerImage = docker.build registry + ":001"  
-                       docker.withRegistry('',registryCredential ) {   
+                       docker.withRegistry( '', registryCredential ) {   
                            dockerImage.push() }
                          }	
                  }
