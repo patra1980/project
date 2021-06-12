@@ -2,8 +2,8 @@ pipeline {
     agent any
     stages{
 
-        environment {
-        DOCKERHUB_CREDENTIALS = credentials('patrautpal80-dockerhub'}
+        environment {  
+        DOCKERHUB_CREDENTIALS = credentials('patra1980-dockerhub')
         } 
         stage("SCM"){
             steps{
