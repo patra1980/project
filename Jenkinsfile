@@ -2,10 +2,10 @@ pipeline {
     agent any
     stages{
 
-        environment {  
-        DOCKERHUB_CREDENTIALS = credentials('patra1980-dockerhub')
-        } 
-        stage("SCM"){
+         environment {  
+         DOCKERHUB_CREDENTIALS = credentials('patra1980-dockerhub')
+         } 
+         stage("SCM"){
             steps{
                 node('scm-node-label') 
                  {
