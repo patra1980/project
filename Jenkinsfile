@@ -1,7 +1,7 @@
 pipeline {
     environment {
            registry = "patrautpal80/myproject"
-           registryCredential = 'patrautpal80'
+           registryCredential = 'docker-hub'
            dockerImage = ''
     }
     agent any
