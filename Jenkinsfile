@@ -1,6 +1,10 @@
 pipeline {
     agent any
     stages{
+
+        environment {
+        DOCKERHUB_CREDENTIALS = credentials('patrautpal80-dockerhub'}
+        } 
         stage("SCM"){
             steps{
                 node('scm-node-label') 
