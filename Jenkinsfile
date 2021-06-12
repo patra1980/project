@@ -39,10 +39,11 @@ pipeline {
          stage("docker")
          {
              steps{
-                 node('dockerserver')
+                 node('dockerserver')   
                  {
                    script{
-                       dockerImage = docker.build registry + ":002"  
+                       sh "docker rmi -rf $registry:$BUILD_NUMBER"
+                       dockerImage = docker.build registry + ":$BUILD_NUMBER"  
                        docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {   
                            dockerImage.push() }
                          }	
