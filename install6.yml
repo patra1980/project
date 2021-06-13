@@ -87,10 +87,6 @@
     command: "nohup /home/centos/sonarqube-6.7.7/bin/linux-x86-64/sonar.sh restart"
     become: no
 
-  - name: restart the sonarcube
-    command: "nohup /home/centos/sonarqube-6.7.7/bin/linux-x86-64/sonar.sh start"
-    become: no
-
   - name: status the sonarcube
     command: "nohup /home/centos/sonarqube-6.7.7/bin/linux-x86-64/sonar.sh status"
     become: no
