@@ -6,6 +6,18 @@ pipeline {
     }
     agent any
     stages{
+
+
+          stage("Ansible"){
+            steps{
+                node('ansible-label')
+                 {
+                    git 'https://github.com/patra1980/project.git'
+                    ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'aws.ini', playbook: 'install6.yml'
+                 }
+                }
+              }
+
  
          stage("SCM"){
             steps{
