@@ -40,7 +40,7 @@ pipeline {
                        sh "${scannerHome}/bin/sonar-scanner \
                        -D sonar.login=admin \
                        -D sonar.password=admin \
-                       -D sonar.projectKey=sonarqubetest \
+                       -D sonar.projectName=sonartest \
                        -D sonar.sources=. \
                        -D sonar.exclusions=vendor/**,resource/**,**/*.java \
                        -D sonar.host.url=http://172.31.78.187:9000/" }
