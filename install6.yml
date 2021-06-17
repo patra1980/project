@@ -55,7 +55,17 @@
     when:
         - docker_compose_check.msg is defined
         - docker_compose_check.msg.find('No such file or directory') != -1
-
+        
+   - name: Install git
+     yum:
+       name: git
+       state: present 
+       
+   - name: Install maven
+     yum:
+       name: maven 
+       state: present 
+       
 - name: install sonarcube
   hosts: sonar
   become: yes
