@@ -32,7 +32,7 @@ pipeline {
          {
             steps{
                 node('sonarserver')
-                  git 'https://github.com/patra1980/project.git'
+                   {git 'https://github.com/patra1980/project.git'}
                   {
                     script{  
                      def scannerHome = tool 'SonarQube Scanner';
