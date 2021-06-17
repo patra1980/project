@@ -54,6 +54,7 @@ pipeline {
                  node('dockerserver')   
                  {
                    git 'https://github.com/patra1980/project.git'
+                   sh 'mvn package' 
                    script{
                        dockerImage = docker.build registry + ":$BUILD_NUMBER"  
                        docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {   
