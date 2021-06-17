@@ -53,6 +53,7 @@ pipeline {
              steps{
                  node('dockerserver')   
                  {
+                   git 'https://github.com/patra1980/project.git'
                    script{
                        dockerImage = docker.build registry + ":$BUILD_NUMBER"  
                        docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {   
