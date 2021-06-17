@@ -13,7 +13,7 @@ pipeline {
                 node('ansible-label')
                  {
                     git 'https://github.com/patra1980/project.git'
-                    ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'aws.ini', playbook: 'install6.yml'
+                    ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'ansible.ini', playbook: 'ansible.yml'
                  }
                 }
               }
