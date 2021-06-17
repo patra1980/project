@@ -19,9 +19,9 @@ pipeline {
               }
 
  
-         stage("SCM"){
+         stage("SCM1"){
             steps{
-                node('scm-node-label') 
+     
                  {
                     git 'https://github.com/patra1980/project.git'
                  }
