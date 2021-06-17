@@ -107,6 +107,11 @@
     yum:
       name: java-1.8.0*
       state: present
+      
+  - name: Install git
+    yum:
+      name: git
+      state: present 
 
   - name: unzip the file
     yum:
@@ -137,7 +142,6 @@
 - name: install software in SCM servers
   hosts: SCM
   become: yes
-
 
   tasks:
   - name: Install git
