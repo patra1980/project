@@ -22,9 +22,9 @@ pipeline {
          stage("SCM1"){
             steps{
      
-                 {
+       
                     git 'https://github.com/patra1980/project.git'
-                 }
+               
                 }
               }
             
