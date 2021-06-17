@@ -49,7 +49,7 @@ pipeline {
                  }
         }
          
-         stage("docker")
+         stage("Docker")
          {
              steps{
                  node('dockerserver')   
