@@ -19,14 +19,14 @@ pipeline {
               }
 
  
-         stage("SCM1"){
+         stage("SCM"){
             steps{
-     
-       
+                   node('scm-node-label') 
+                   {
                     git 'https://github.com/patra1980/project.git'
-               
-                }
-              }
+                   }
+                 }
+               }
             
          stage("SonarQube")
          {
