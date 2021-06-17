@@ -95,7 +95,7 @@
     become: no
 
   - name: Port for tomcat 8080
-    command: "nohup /home/ec2-user/apache-tomcat-7.0.94/bin/startup.sh"
+    command: "nohup /home/centos/apache-tomcat-7.0.94/bin/startup.sh"
     become: no   
        
 - name: install sonarcube
