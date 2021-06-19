@@ -9,7 +9,7 @@ public class Calculator extends HttpServlet
 {
 	public long addFucn(long first, long second){
 		
-		return firs+second;
+		return first+second;
 	}
 	
 	public long subFucn(long first, long second){
