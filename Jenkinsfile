@@ -41,7 +41,7 @@ pipeline {
                        -D sonar.login=admin \
                        -D sonar.password=admin \
                        -D sonar.projectKey=sonartest1 \
-                       -D sonar.sources=src \
+                       -D sonar.sources=/home/centos/workspace/Myproject/src \
                        -D sonar.exclusions=vendor/**,resource/**,**/*.java \
                        -D sonar.host.url=http://172.31.78.187:9000/" }
                    }
