@@ -61,8 +61,8 @@ pipeline {
                        docker.withRegistry( '', registryCredential ) {   
                            dockerImage.push("$BUILD_NUMBER")
                            dockerImage.push('latest') }
-                           sh "docker rmi $imagename:$BUILD_NUMBER"
-                           sh "docker rmi $imagename:latest"
+                           sh "docker rmi $registry:$BUILD_NUMBER"
+                           sh "docker rmi $registry:latest"
                          }	
                  }
              }
