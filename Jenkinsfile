@@ -58,9 +58,11 @@ pipeline {
                    sh 'mvn package' 
                    script{
                        dockerImage = docker.build registry + ":$BUILD_NUMBER"  
-                       docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {   
-                           dockerImage.push() }
-                       sh "docker rmi -f $registry:$BUILD_NUMBER"
+                       docker.withRegistry( '', registryCredential ) {   
+                           dockerImage.push("$BUILD_NUMBER")
+                           dockerImage.push(latest) }
+                       sh "docker rmi $imagename:$BUILD_NUMBER"
+                       sh "docker rmi $imagename:latest"
                          }	
                  }
              }
