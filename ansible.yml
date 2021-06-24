@@ -59,6 +59,9 @@
   - name: Grant access to docker sockets
     ansible.builtin.command: chmod 777 /var/run/docker.sock
   
+  - name: Grant access to docker sockets
+    ansible.builtin.command: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  
   - name: Install git
     yum:
       name: git
