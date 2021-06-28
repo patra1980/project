@@ -73,15 +73,7 @@ pipeline {
                     }
          }
         
-         stage("NEXUS"){
-            steps{
-                   node('nexus-node-label') 
-                   {
-                    git 'https://github.com/patra1980/project.git'
-           
-                   }
-                 }
-               }
+         
          
         
 }
