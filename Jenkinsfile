@@ -72,6 +72,7 @@ pipeline {
                       }
                     }
          }
+        
          stage("NEXUS"){
             steps{
                    node('nexus-node-label') 
