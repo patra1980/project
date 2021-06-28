@@ -24,6 +24,9 @@ pipeline {
                    node('scm-node-label') 
                    {
                     git 'https://github.com/patra1980/project.git'
+                    sh 'mvn clean'
+                    sh 'mvn package'
+                    sh 'mvn deploy'
                    }
                  }
                }
@@ -73,7 +76,7 @@ pipeline {
             steps{
                    node('nexus-node-label') 
                    {
-                    git 'https://github.com/patra1980/project.git'
+                    echo 'Nexus server is running'
                    }
                  }
                }
