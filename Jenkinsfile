@@ -73,7 +73,7 @@ pipeline {
                     }
          }
         
-         stage("NEXUS")
+         stage("Nexus")
          {
             steps{
                  node('nexus-node-label') 
