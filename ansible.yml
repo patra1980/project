@@ -172,14 +172,14 @@
         url: https://download.sonatype.com/nexus/oss/nexus-2.14.18-01-bundle.tar.gz
         dest: /home/centos/
 
-  - name: unarchive sonarcube
+  - name: unarchive nexus
     unarchive:
      src: https://download.sonatype.com/nexus/oss/nexus-2.14.18-01-bundle.tar.gz
      dest: /home/centos/
      remote_src: true
     become: no
 
-  - name: start the sonarcube
+  - name: start the nexus
     command: "nohup /home/centos/~/nexus-2.14.18-01/bin/nexus start"
     become: no
     ignore_errors: yes
