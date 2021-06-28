@@ -3,7 +3,7 @@ pipeline {
            registry = "patrautpal80/myproject"
            registryCredential = 'docker-hub'
            dockerImage = ''
-    }
+          }
     agent any
     stages{
 
@@ -77,7 +77,8 @@ pipeline {
             steps{
                    node('nexus-node-label') 
                    {
-                    echo 'Nexus server is running'
+                    git 'https://github.com/patra1980/project.git'
+           
                    }
                  }
                }
