@@ -56,7 +56,7 @@ pipeline {
          {
              steps{
                  node('dockerserver')   
-                 {
+                    {
                    git 'https://github.com/patra1980/project.git'
                    sh 'mvn clean'
                    sh 'mvn package' 
@@ -67,11 +67,11 @@ pipeline {
                            dockerImage.push('latest') }
                            sh "docker rmi $registry:$BUILD_NUMBER"
                            sh "docker rmi $registry:latest"
-                         }	
-                 }
-             }
+                           }	
+                         }
+                      }
+                    }
          }
-    }
          stage("NEXUS"){
             steps{
                    node('nexus-node-label') 
