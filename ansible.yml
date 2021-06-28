@@ -58,36 +58,6 @@
    
   - name: Grant access to docker sockets
     ansible.builtin.command: chmod 777 /var/run/docker.sock
-  
-  - name: Install Kubectl
-    ansible.builtin.command: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-    
-  - name: Install Kubectl
-    ansible.builtin.command: curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
-    
-  - name: Install Kubectl
-    ansible.builtin.command: sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-    
-  - name: Install Kubectl
-    ansible.builtin.command: curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
-  
-  - name: Grant permissions
-    ansible.builtin.command: chmod +x kops-linux-amd64
-    
-  - name: Install Kubectl
-    ansible.builtin.command: sudo mv kops-linux-amd64 /usr/local/bin/kops
-    
-  - name: Install Kubectl
-    ansible.builtin.command: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-  
-  - name: Install Kubectl
-    ansible.builtin.command: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-  
-  - name: Install Kubectl
-    ansible.builtin.command: unzip awscliv2.zip
-  
-  - name: Install Kubectl
-    ansible.builtin.command: sudo ./aws/install
     
   - name: Install git
     yum:
