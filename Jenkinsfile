@@ -8,7 +8,7 @@ pipeline {
     stages{
 
 
-          stage("Ansible"){
+         stage("Ansible"){
             steps{
                 node('ansible-label')
                  {
@@ -72,7 +72,8 @@ pipeline {
                       }
                     }
          }
-        stage("NEXUS"){
+        
+         stage("NEXUS"){
             steps{
                    node('nexus-node-label') 
                    {
