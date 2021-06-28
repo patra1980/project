@@ -151,5 +151,38 @@
     yum:
       name: git
       state: present  
+      
+- name: install software in NEXUS servers
+  hosts: nexus
+  become: yes 
+  
+  tasks:
+  - name: install java
+    yum:
+      name: java-1.8.0*
+      state: present
+   
+  - name: unzip the file
+    yum:
+      name: unzip
+      state: present
+
+  - name: install url
+    get_url:
+        url: https://download.sonatype.com/nexus/oss/nexus-2.14.18-01-bundle.tar.gz
+        dest: /home/centos/
+
+  - name: unarchive sonarcube
+    unarchive:
+     src: https://download.sonatype.com/nexus/oss/nexus-2.14.18-01-bundle.tar.gz
+     dest: /home/centos/
+     remote_src: true
+    become: no
+
+  - name: start the sonarcube
+    command: "nohup /home/centos/~/nexus-2.14.18-01/bin/nexus start"
+    become: no
+    ignore_errors: yes
+  
 ...
   
