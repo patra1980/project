@@ -55,6 +55,7 @@ pipeline {
                  node('dockerserver')   
                  {
                    git 'https://github.com/patra1980/project.git'
+                   sh 'mvn clean'
                    sh 'mvn package' 
                    script{
                        dockerImage = docker.build registry + ":$BUILD_NUMBER"  
